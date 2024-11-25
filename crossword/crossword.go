@@ -178,7 +178,7 @@ func (c *Crossword) Fill(wordList *WordList) bool {
 	sa = append(sa, State{c.ToByteArray(), Target{2, 0, true}, "", []string{}})
 
 	var done = false
-	for iterations := 0; !done && iterations < 1000; iterations++ {
+	for iterations := 0; !done && iterations < 20000; iterations++ {
 		s := &sa[len(sa)-1]
 		entries := c.GetEntries()
 		numMatches := make([]int, len(entries))
